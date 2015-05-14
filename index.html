@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>bit-autocomplete  - index</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href='./static/bundles/static.css'/>
+	<!--[if lt IE 9]>
+   <script type="text/javascript" src="./static/html5shiv.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body class="docs">
+	<header>
+		<nav class="container">
+
+			<div class="logo-menu">
+				<a class="brand" href="index.html">bit-autocomplete</a>
+			</div>
+			<ul class="nav">
+			  <li class="active">
+	            <a href="index.html">Home</a>
+              </li>
+              
+		          <li>
+		            <a href="docs/index.html">Api</a>
+		          </li>
+	          
+		      <li class=""><a href="https://github.com/bitovi-components/bit-autocomplete">GitHub</a></li>
+	        </ul>
+			<div class="pull-right">
+				<div class="bitovi-menu">
+					<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+					<ul class="dropdown-menu">
+						<li><a href="http://bitovi.com">Bitovi.com</a></li>
+						<li><a href="http://bitovi.com/blog/">Blog</a></li>
+						<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+						<li><a href="http://bitovi.com/training/">Training</a></li>
+						<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+						<li><a href="http://bitovi.com/people/">People</a></li>
+						<li><a href="http://bitovi.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+
+		
+
+		
+			
+		
+		
+		
+		
+
+		
+		<section class="comment">
+			<section style="width: 800px; margin:100px auto 20px auto; overflow:hidden;">
+<h1>bit-graph</h1>
+<p><a href="https://travis-ci.org/bitovi-components/bit-graph"><img src="https://travis-ci.org/bitovi-components/bit-graph.svg?branch=master" alt="Build Status" /></a></p>
+<p>A live-reloading graph widget that can be loaded by:</p>
+<ul>
+<li>StealJS + ES6</li>
+<li>npm / browserify / CJS</li>
+<li>RequireJS / AMD</li>
+<li>Standalone with CanJS and jQuery</li>
+</ul>
+<p>Graphs can be either normalized to fit the dimensions of the graph, or the graph can auto-scale around the data set(s).</p>
+<h2>Usage</h2>
+<p>A <code>bit-graph</code> contains many series. Series are added as sub-components (<code>bit-series</code>) of the graph, and receive a data object in the form of an Array or can.List. The graph automatically binds to changes on these data objects (<code>push</code>, <code>pop</code>, <code>splice</code>, etc.) and will update the graph lines and resize the graph automatically.</p>
+<p><code>bit-graph</code> can function in two modes:</p>
+<ul>
+<li>un-normalized (default): each <code>bit-series</code> will be plotted relative to the others, so if one series changes the scale, all other series will be plotted on the new scale</li>
+<li>normalized: each <code>bit-series</code> is plotted in a fixed graph space, so if one series changes, all other series remain the same. The mode can be activated with the <code>normalized</code> param (<code>&lt;bit-graph normalized&gt;...&lt;/bit-graph&gt;</code>)</li>
+</ul>
+<p>Graphs can be resized and have their margins specified through parameters, and series can have their line color specified as well.</p>
+<h2>Install</h2>
+<pre><code class="language-bash">npm install bit-graph --save
+</code></pre>
+<h2>ES6 use</h2>
+<p>With StealJS, you can import this module directly in a template that is autorendered:</p>
+<pre><code class="language-html">&lt;script type=&quot;text/stache&quot; id=&quot;demo&quot; can-autorender&gt;
+    &lt;can-import from=&quot;bit-graph&quot; /&gt;
+    &lt;bit-graph&gt;
+        &lt;bit-series data=&quot;{dataSource}&quot; /&gt;
+    &lt;/bit-tabs&gt;
+&lt;/script&gt;
+
+&lt;script src='./node_modules/steal/steal.js'
+    main=&quot;can/view/autorender/&quot;&gt;
+
+    import can from &quot;can&quot;;
+    import $ from &quot;jquery&quot;;
+
+    $(&quot;#demo&quot;).viewModel().attr({
+        dataSource1: new can.List([1, 2, 3])
+    });
+&lt;/script&gt;
+
+</code></pre>
+<p>Alternatively, you can import this module like:</p>
+<pre><code class="language-js">import &quot;bit-graph&quot;;
+import can from &quot;can&quot;;
+import $ from &quot;jquery&quot;;
+import stache from &quot;can/view/stache/stache&quot;;
+
+var template = stache('&lt;bit-graph&gt;' +
+    '&lt;bit-series data=&quot;{dataSource}&quot; /&gt;' +
+'&lt;/bit-tabs&gt;');
+
+$(&quot;body&quot;).append(template({
+    dataSource1: new can.List([1, 2, 3])
+}));
+
+</code></pre>
+<h2>CJS use</h2>
+<p>Use <code>require</code> to load <code>bit-graph</code> and everything else
+needed to create a template that uses <code>bit-graph</code>:</p>
+<pre><code class="language-js">var can = require(&quot;canjs&quot;);
+var $ = require(&quot;jquery&quot;)
+
+// Add's bit-graph tag
+require(&quot;bit-graph&quot;);
+// Use stache
+require(&quot;canjs/view/stache/stache&quot;);
+
+var template = can.stache('&lt;bit-graph&gt;' +
+    '&lt;bit-series data=&quot;{dataSource}&quot; /&gt;' +
+'&lt;/bit-tabs&gt;');
+
+$(&quot;body&quot;).append(template({
+    dataSource1: new can.List([1, 2, 3])
+}));
+
+</code></pre>
+<h2>AMD use</h2>
+<p>Configure the <code>can</code> and <code>jquery</code> paths and the <code>bit-graphs</code> package:</p>
+<pre><code class="language-html">&lt;script src=&quot;require.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    require.config({
+        paths: {
+            &quot;jquery&quot;: &quot;node_modules/jquery/dist/jquery&quot;,
+            &quot;can&quot;: &quot;node_modules/canjs/dist/amd/can&quot;
+        },
+        packages: [{
+                name: 'bit-graph',
+                location: 'node_modules/bit-graph/dist/amd',
+                main: 'bit-graph'
+        }]
+    });
+    require([&quot;main-amd&quot;], function(){});
+&lt;/script&gt;
+</code></pre>
+<p>Make sure you have the <code>css</code> plugin configured also!</p>
+<p>Use bit-graph like:</p>
+<pre><code class="language-js">define([&quot;can&quot;, &quot;jquery&quot;, &quot;can/view/stache&quot;, &quot;bit-graph&quot;], function(can, $) {
+    var template = can.stache('&lt;bit-graph&gt;' +
+        '&lt;bit-series data=&quot;{dataSource}&quot; /&gt;' +
+    '&lt;/bit-tabs&gt;');
+
+    $(&quot;body&quot;).append(template({
+        dataSource1: new can.List([1, 2, 3])
+    }));
+});
+</code></pre>
+<h2>Standalone use</h2>
+<p>Load the <code>global</code> css and js files:</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; 
+      href=&quot;./node_modules/bit-graph/dist/global/bit-graph.css&quot;&gt;
+      
+&lt;script src='./node_modules/jquery/dist/jquery.js'&gt;&lt;/script&gt;
+&lt;script src='./node_modules/canjs/dist/can.jquery.js'&gt;&lt;/script&gt;
+&lt;script src='./node_modules/canjs/dist/can.stache.js'&gt;&lt;/script&gt;
+&lt;script src='./node_modules/bit-graph/dist/global/bit-graph.js'&gt;&lt;/script&gt;
+&lt;script id='main-stache' text='text/stache'&gt;
+  &lt;bit-graph&gt;
+    &lt;bit-series data=&quot;{dataSource}&quot; /&gt;
+  &lt;/bit-tabs&gt;
+&lt;/script&gt;
+&lt;script&gt;
+  $(&quot;body&quot;).append( can.view(&quot;main-stache&quot;, {
+    dataSource: new can.List([1, 2, 3])
+  }) );
+&lt;/script&gt;
+</code></pre>
+</section>
+
+		</section>
+		
+		
+
+		
+
+		
+	
+	
+	
+
+
+
+
+
+	
+		<script type="text/javascript">
+		var docObject = {"type":"page","name":"index","src":"_pages/index.md","description":"","hideSidebar":true,"hideTitle":true,"hideFooter":true,"hideContainer":true,"hideArticle":true,"comment":" ","templates":"/Users/kyle/projects/bitovi-components/bit-graph/theme/templates","static":"/Users/kyle/projects/bitovi-components/bit-graph/theme/static","glob":{"pattern":"_pages/*.md","ignore":"{node_modules,bower_components}/**/*","cwd":"/Users/kyle/projects/bitovi-components/bit-graph"},"dest":"/Users/kyle/projects/bitovi-components/bit-graph","generators":["html"],"page":"index","docConfigDest":"documentjs.json","project":{}};
+	</script>
+	
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript' 
+				data-main="static"
+				src="./static/steal.production.js"
+		    		bundles-path="bundles"></script>
+	
+</body>
+
+</html>
