@@ -16,7 +16,7 @@
  * @param {Array} margins Margins of the graph inside the SVG element.
  * @param {Number} height The height of the graph element.
  * @param {Number} width The width of the graph element.
- * @param {boolean} normalize Whether to normalize series data against each other or not.
+ * @param {Boolean} normalize Whether to normalize series data against each other or not.
  *
  * @body
  *

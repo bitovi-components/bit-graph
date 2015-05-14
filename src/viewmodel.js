@@ -99,10 +99,10 @@ export default can.Map.extend({
         },
 
         /**
-         * @property {can.Map} graph.viewModel.seriesSerialized seriesSerialized
+         * @property {can.List} graph.viewModel.seriesSerialized seriesSerialized
          * @parent graph/viewModel
          * @description Serialized version of series data. This is populated automatically when series are added to the graph using the `bit-series` sub-component.
-         * @option {can.Map} Defaults to `undefined`.
+         * @option {can.List} Defaults to `undefined`.
          */
         seriesSerialized: {
             get: function() {
