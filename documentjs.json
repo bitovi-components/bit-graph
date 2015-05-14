@@ -1,11 +1,11 @@
 {
     "versions": {
         "0.0.1": {
-            "source": "git://github.com/bitovi-components/bit-graph#master",
+            "source": "https://github.com/bitovi-components/bit-graph#master",
             "sites": {
                 "docs": {
                     "glob": {
-                        "ignore": ["{node_modules,bower_components}/**/*", "README.md"]
+                        "ignore": ["{node_modules}/**/*", "README.md"]
                     },
                     "parent": "graph",
                     "dest" : "../docs"

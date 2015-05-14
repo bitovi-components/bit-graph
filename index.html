@@ -112,7 +112,7 @@
     &lt;can-import from=&quot;bit-graph&quot; /&gt;
     &lt;bit-graph&gt;
         &lt;bit-series data=&quot;{dataSource}&quot; /&gt;
-    &lt;/bit-tabs&gt;
+    &lt;/bit-graph&gt;
 &lt;/script&gt;
 
 &lt;script src='./node_modules/steal/steal.js'
@@ -135,7 +135,7 @@ import stache from &quot;can/view/stache/stache&quot;;
 
 var template = stache('&lt;bit-graph&gt;' +
     '&lt;bit-series data=&quot;{dataSource}&quot; /&gt;' +
-'&lt;/bit-tabs&gt;');
+'&lt;/bit-graph&gt;');
 
 $(&quot;body&quot;).append(template({
     dataSource1: new can.List([1, 2, 3])
@@ -155,7 +155,7 @@ require(&quot;canjs/view/stache/stache&quot;);
 
 var template = can.stache('&lt;bit-graph&gt;' +
     '&lt;bit-series data=&quot;{dataSource}&quot; /&gt;' +
-'&lt;/bit-tabs&gt;');
+'&lt;/bit-graph&gt;');
 
 $(&quot;body&quot;).append(template({
     dataSource1: new can.List([1, 2, 3])
@@ -185,7 +185,7 @@ $(&quot;body&quot;).append(template({
 <pre><code class="language-js">define([&quot;can&quot;, &quot;jquery&quot;, &quot;can/view/stache&quot;, &quot;bit-graph&quot;], function(can, $) {
     var template = can.stache('&lt;bit-graph&gt;' +
         '&lt;bit-series data=&quot;{dataSource}&quot; /&gt;' +
-    '&lt;/bit-tabs&gt;');
+    '&lt;/bit-graph&gt;');
 
     $(&quot;body&quot;).append(template({
         dataSource1: new can.List([1, 2, 3])
@@ -204,7 +204,7 @@ $(&quot;body&quot;).append(template({
 &lt;script id='main-stache' text='text/stache'&gt;
   &lt;bit-graph&gt;
     &lt;bit-series data=&quot;{dataSource}&quot; /&gt;
-  &lt;/bit-tabs&gt;
+  &lt;/bit-graph&gt;
 &lt;/script&gt;
 &lt;script&gt;
   $(&quot;body&quot;).append( can.view(&quot;main-stache&quot;, {
@@ -212,6 +212,8 @@ $(&quot;body&quot;).append(template({
   }) );
 &lt;/script&gt;
 </code></pre>
+<h1>Demo</h1>
+<iframe src="bit-graph/bit-graph.html" width="800" height="1000" />
 </section>
 
 		</section>
