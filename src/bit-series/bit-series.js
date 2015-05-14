@@ -39,7 +39,7 @@ can.Component.extend({
 
         /**
          * @function series.events.inserted Series Inserted Event
-         * @parent autocomplete/events
+         * @parent series/events
          * @description Identifies the parent scope (`bit-graph`) and adds itself to it as a new series.
          */
         inserted: function() {
@@ -50,7 +50,7 @@ can.Component.extend({
 
         /**
          * @function series.events.removed Series Removed Event
-         * @parent autocomplete/events
+         * @parent series/events
          * @description Removes itself as a series from the parent scope (`bit-graph`).
          */
         removed: function() {

@@ -54,7 +54,7 @@ can.Component.extend({
 
         /**
          * @function graph.events.inserted Graph Inserted Event
-         * @parent autocomplete/events
+         * @parent graph/events
          * @description Sets up the graph container elements in D3 and builds the base graph SVG elements.
          * @param {viewModel} viewModel The viewModel of the graph
          * @param {event} ev The jQuery event triggered by DOM insertion 
@@ -67,7 +67,7 @@ can.Component.extend({
 
         /**
          * @function graph.events.seriesSerialized Serialized Series Change Event
-         * @parent autocomplete/events
+         * @parent graph/events
          * @description Refresh graph data and axes when series' line(s) change.
          */
         "{viewModel} seriesSerialized": function() {
