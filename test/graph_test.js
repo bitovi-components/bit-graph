@@ -1,5 +1,6 @@
 import QUnit from "steal-qunit";
-import { BitGraphVM, BitSeriesVM } from "bit-graph";
+import BitGraphVM from "bit-graph/";
+import BitSeriesVM from "bit-graph/bit-series/";
 import F from "funcunit";
 
 F.attach(QUnit);
