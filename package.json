@@ -1,0 +1,26 @@
+{
+  "name": "bit-graph-docs",
+  "version": "0.0.0",
+  "description": "Documentation for bitovi-componets/bit-graph",
+  "scripts": {
+    "documentjs": "./node_modules/.bin/documentjs"
+  },
+  "devDependencies": {
+    "documentjs": "bitovi/documentjs#master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitovi-components/bit-graph"
+  },
+  "keywords": [
+    "CanJS",
+    "UI",
+    "SVG"
+  ],
+  "author": "Bitovi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitovi-components/bit-graph/issues"
+  },
+  "homepage": "http://bitovi-components.github.io/bit-graph"
+}

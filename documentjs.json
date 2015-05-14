@@ -1,0 +1,6 @@
+{
+   "versions": {
+     "0.0.1": "git://github.com/bitovi-components/bit-graph#master"
+   },
+   "defaultVersion": "0.0.1"
+ }
