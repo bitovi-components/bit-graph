@@ -9,10 +9,10 @@ export default can.Map.extend({
          * @property {Array} graph.viewModel.margins margins
          * @parent graph/viewModel
          * @description Margins between the graph and its containing element. Should be a four-length array similar to a CSS margin property (`[margin-top, margin-right, margin-bottom, margin-left]`)
-         * @option {Array} Defaults to `[20, 0, 20, 80]`.
+         * @option {Array} Defaults to `[20, 20, 20, 80]`.
          */
         margins: {
-            value: [20, 0, 20, 80],
+            value: [20, 20, 20, 80],
             type: "*"
         },
 

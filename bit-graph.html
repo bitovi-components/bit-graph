@@ -1,21 +1,26 @@
-<!-- Template to load -->
-<script type="text/stache" id="demo" can-autorender>
+<html>
+  <head>
+    <title>Bit-graph Demo</title>
+  </head>
+  <body>
+    <!-- Template to load -->
+    <script type="text/stache" id="demo-html" can-autorender>
 <can-import from="bit-graph" />
 <h1>De-Normalized Data</h1>
-<bit-graph>
+<bit-graph width="500" height="300">
   <bit-series data="{data1}" />
   <bit-series data="{data2}" color="#F00" />
 </bit-graph>
 
 <h1>Normalized Data</h1>
-<bit-graph normalize>
+<bit-graph normalize width="500" height="300">
   <bit-series data="{data1}" />
   <bit-series data="{data2}" color="#F00" />
 </bit-graph>
-</script>
+    </script>
 
-<!-- Loading Script -->
-<script src="../../node_modules/steal/steal.js" id="demo_source" main="can/view/autorender/">
+    <!-- Loading Script -->
+    <script src="node_modules/steal/steal.js" id="demo-source" main="can/view/autorender/">
 import $ from "jquery";
 import can from "can";
 
@@ -26,7 +31,7 @@ var anotherSeries = new can.List([
   "3", "6", "2", "5"
 ]);
 
-var vm = $("#demo").viewModel();
+var vm = $("#demo-html").viewModel();
 vm.attr({
   data1: seriesData,
   data2: anotherSeries
@@ -40,5 +45,7 @@ window.setInterval(() => {
     anotherSeries.push(val);
   can.batch.stop();
 }, 8000);
-
-</script>
+    </script>
+  </body>
+</html>
+  
