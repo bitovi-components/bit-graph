@@ -1,0 +1,25 @@
+/*bit-graph@0.0.1#bit-graph.less!$less*/
+bit-graph .graph {
+  /* tell the SVG path to be a thin blue line without any area fill */
+}
+bit-graph .graph path {
+  stroke-width: 2;
+  fill: none;
+}
+bit-graph .graph .axis {
+  shape-rendering: crispEdges;
+}
+bit-graph .graph .x.axis line {
+  stroke: lightgrey;
+}
+bit-graph .graph .x.axis .minor {
+  stroke-opacity: .3;
+}
+bit-graph .graph .x.axis path {
+  stroke: none;
+}
+bit-graph .graph .y.axis line,
+bit-graph .graph .y.axis path {
+  fill: none;
+  stroke: #000;
+}
