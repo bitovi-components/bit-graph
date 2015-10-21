@@ -144,10 +144,10 @@ Load the `global` css and js files:
 <script src='./node_modules/canjs/dist/can.jquery.js'></script>
 <script src='./node_modules/canjs/dist/can.stache.js'></script>
 <script src='./node_modules/bit-graph/dist/global/bit-graph.js'></script>
-<script id='main-stache' text='text/stache'>
+<script id='main-stache' type='text/stache'>
   <bit-graph>
     <bit-series data="{dataSource}" />
-  </bit-tabs>
+  </bit-graph>
 </script>
 <script>
   $("body").append( can.view("main-stache", {
