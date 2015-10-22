@@ -36,7 +36,7 @@ With StealJS, you can import this module directly in a template that is autorend
 	<can-import from="bit-graph" />
 	<bit-graph>
 		<bit-series data="{dataSource}" />
-  	</bit-tabs>
+  	</bit-graph>
 </script>
 
 <script src='./node_modules/steal/steal.js'
@@ -62,7 +62,7 @@ import stache from "can/view/stache/stache";
 
 var template = stache('<bit-graph>' +
 	'<bit-series data="{dataSource}" />' +
-'</bit-tabs>');
+'</bit-graph>');
 
 $("body").append(template({
 	dataSource1: new can.List([1, 2, 3])
@@ -86,7 +86,7 @@ require("canjs/view/stache/stache");
 
 var template = can.stache('<bit-graph>' +
 	'<bit-series data="{dataSource}" />' +
-'</bit-tabs>');
+'</bit-graph>');
 
 $("body").append(template({
 	dataSource1: new can.List([1, 2, 3])
@@ -124,7 +124,7 @@ Use bit-graph like:
 define(["can", "jquery", "can/view/stache", "bit-graph"], function(can, $) {
 	var template = can.stache('<bit-graph>' +
 		'<bit-series data="{dataSource}" />' +
-	'</bit-tabs>');
+	'</bit-graph>');
 
 	$("body").append(template({
 		dataSource1: new can.List([1, 2, 3])
